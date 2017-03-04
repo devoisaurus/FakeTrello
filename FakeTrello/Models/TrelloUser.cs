@@ -26,6 +26,8 @@ namespace FakeTrello.Models
         [MaxLength(60)]
         public string FullName { get; set; }
 
+        public string PasswordHash { get; set; }
+
         public ApplicationUser BaseUser { get; set; } // 1 to 1 relationship
 
         public List<Board> Boards { get; set; } // 1 to many (boards) relationship
