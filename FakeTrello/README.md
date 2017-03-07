@@ -17,4 +17,4 @@
 
 ### Fake Trello ERD
 
-![ERD](/ERD/FakeTrelloERD.jpg)
+![ERD](../ERD/FakeTrelloERD.jpg)
