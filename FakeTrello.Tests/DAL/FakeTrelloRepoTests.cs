@@ -47,6 +47,10 @@ namespace FakeTrello.Tests.DAL
             mock_boards_set.Setup(b => b.Remove(It.IsAny<Board>())).Callback((Board board) => fake_board_table.Remove(board));
 
             fake_context.Setup(c => c.Boards).Returns(mock_boards_set.Object); // Context.Boards returns fake_board_table (a list)
+<<<<<<< HEAD
+=======
+            //fake_context.Setup(c => c.SaveChanges()).Verifiable().Returns(0); Verifiable returns void. Make PR
+>>>>>>> 8dcc82544569d36e3049fd94ac9dc725de309c10
             fake_context.Setup(c => c.SaveChanges()).Returns(0).Verifiable();
         }
 
@@ -165,18 +169,33 @@ namespace FakeTrello.Tests.DAL
         [TestMethod]
         public void EnsureICanEditBoardName()
         {
+<<<<<<< HEAD
             //Arrange
             fake_board_table.Add(new Board { BoardId = 1, Name = "My Board", Owner = sally });
             CreateFakeDatabase();
 
             //Act
+=======
+            // Arrange
+            fake_board_table.Add(new Board { BoardId = 1, Name = "My Board", Owner = sally });
+            CreateFakeDatabase();
+
+            // Act
+>>>>>>> 8dcc82544569d36e3049fd94ac9dc725de309c10
             string expected_board_name = "Our Board";
             repo.EditBoardName(1, expected_board_name);
             string actual_board_name = repo.GetBoard(1).Name;
 
+<<<<<<< HEAD
             //Assert
             Assert.AreEqual(expected_board_name, actual_board_name);
             fake_context.Verify(c => c.SaveChanges(), Times.Once);
+=======
+            // Assert
+            Assert.AreEqual(expected_board_name, actual_board_name);
+            fake_context.Verify(c => c.SaveChanges(), Times.Once());
+            
+>>>>>>> 8dcc82544569d36e3049fd94ac9dc725de309c10
         }
     }
 }

@@ -144,10 +144,17 @@ namespace FakeTrello.DAL
             Board found_board = GetBoard(boardId);
             if (found_board != null)
             {
+<<<<<<< HEAD
                 found_board.Name = newname;
                 Context.SaveChanges();
                 
             }
+=======
+                found_board.Name = newname; // Akin to 'git add'
+                Context.SaveChanges(); // Akin to 'git commit'
+            }
+            // False Positive: SaveChanges is missing.
+>>>>>>> 8dcc82544569d36e3049fd94ac9dc725de309c10
         }
     }
 }
