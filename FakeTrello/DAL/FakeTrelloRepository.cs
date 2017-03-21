@@ -8,7 +8,7 @@ using FakeTrello.Models;
 
 namespace FakeTrello.DAL
 {
-    public class FakeTrelloRepository : IRepository
+    public class FakeTrelloRepository : ICardRepository, IBoardManager, IBoardQuery, IListRepository
     {
         //private FakeTrelloContext context; // Data member
         SqlConnection _trelloConnection;

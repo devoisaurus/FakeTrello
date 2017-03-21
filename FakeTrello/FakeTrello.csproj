@@ -182,7 +182,10 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAL\FakeTrelloContext.cs" />
     <Compile Include="DAL\FakeTrelloRepository.cs" />
-    <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="DAL\IBoardManager.cs" />
+    <Compile Include="DAL\IBoardQuery.cs" />
+    <Compile Include="DAL\IListRepository.cs" />
+    <Compile Include="DAL\ICardRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
