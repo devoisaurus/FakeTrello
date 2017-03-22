@@ -1,4 +1,5 @@
-﻿using FakeTrello.Models;
+﻿using FakeTrello.Controllers.Contracts;
+using FakeTrello.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,16 +9,17 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 
-namespace FakeTrello.DAL
+namespace FakeTrello.DAL.Repository
 {
     public class BoardRepository : IBoardManager, IBoardQuery
     {
 
-        SqlConnection _trelloConnection;
+        IDbConnection _trelloConnection;
 
-        public BoardRepository()
+        public BoardRepository(IDbConnection trelloConnection)
         {
-            _trelloConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
+            _trelloConnection = trelloConnection;
+            //_trelloConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
         }
 
 
